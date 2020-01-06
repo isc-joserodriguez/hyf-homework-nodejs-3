@@ -9,4 +9,8 @@ app.get('/users',(request,response)=>{
     response.send([]);
 });
 
+app.get('/users/:id',(request,response)=>{
+    response.send({});
+});
+
 app.listen(3000,function(){console.log('server is listening')})
