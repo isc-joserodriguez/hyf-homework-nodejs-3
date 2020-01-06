@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+var users=[]
 
 app.use(bodyParser.json())
 
@@ -9,14 +10,15 @@ app.get('/',function(req,res){
 });
 
 app.get('/users',(request,response)=>{
-    response.send([]);
+    response.send(users);
 });
 
-app.get('/users/:id',(request,response)=>{
-    response.send({id:request.params.id});
+app.get('/user/:id',(request,response)=>{
+    response.send({"id":request.params.id});
 });
 
 app.post('/user/',(request,response)=>{
+    users.push({"id":request.body.id})
     response.send({"id":request.body.id});
 });
 
