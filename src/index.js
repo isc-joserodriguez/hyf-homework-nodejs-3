@@ -14,12 +14,12 @@ app.get('/users',(request,response)=>{
 });
 
 app.get('/user/:id',(request,response)=>{
-    response.send({"id":request.params.id});
+    response.send({id:0});
 });
 
 app.post('/user/',(request,response)=>{
-    users.push({"id":request.body.id})
-    response.send({"id":request.body.id});
+    users.push({id:0})
+    response.send({id:0});
 });
 
 app.listen(3000,function(){console.log('server is listening')})
