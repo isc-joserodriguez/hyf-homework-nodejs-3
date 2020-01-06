@@ -10,7 +10,7 @@ app.get('/users',(request,response)=>{
 });
 
 app.get('/users/:id',(request,response)=>{
-    response.send({});
+    response.send({id:request.params.id});
 });
 
 app.listen(3000,function(){console.log('server is listening')})
