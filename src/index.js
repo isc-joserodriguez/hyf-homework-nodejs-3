@@ -13,4 +13,8 @@ app.get('/users/:id',(request,response)=>{
     response.send({id:request.params.id});
 });
 
+app.post('/user/',(request,response)=>{
+    response.send({id:request.body.id});
+});
+
 app.listen(3000,function(){console.log('server is listening')})
